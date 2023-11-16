@@ -36,9 +36,10 @@ leftArrow.addEventListener("click", () => {
 
 rightArrow.addEventListener("click", () => {
 	i++;
-	if (i === slideles.length) {
+	if (i === slides.length) {
 		i = 0;
 	}
 	img.src = slides[i].image;
 	txt.innerHTML = slides[i].tagLine;
 });
+
