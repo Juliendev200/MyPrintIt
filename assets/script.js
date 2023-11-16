@@ -32,6 +32,7 @@ leftArrow.addEventListener("click", () => {
 	}
 	img.src = slides[i].image;
 	txt.innerHTML = slides[i].tagLine;
+	bulleted(i)
 });
 
 rightArrow.addEventListener("click", () => {
@@ -41,5 +42,26 @@ rightArrow.addEventListener("click", () => {
 	}
 	img.src = slides[i].image;
 	txt.innerHTML = slides[i].tagLine;
+	bulleted(i)
 });
 
+for (let j = 0; j <slides.length; j++){
+	const dot = document.createElement("div");
+	dot.classList.add("dot")
+	dotsContainer.appendChild(dot);
+}
+
+const dotsEl = dotsContainer.querySelectorAll(".dot");
+
+dotsEl[0].classList.add('dot_selected');
+
+function bulleted(count) {
+	dotsEl.forEach((dot, index) => {
+		if (index === count) {
+			dot.classList.add("dot_selected");
+		}
+		else {
+			dot.classList.remove("dot_selected");
+		}
+	});
+}
